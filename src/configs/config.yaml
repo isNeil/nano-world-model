@@ -3,6 +3,7 @@ defaults:
   - dataset: dino_wm/point_maze
   - experiment: default
   - planning: base
+  - optional local/paths: paths
   - override hydra/job_logging: disabled
   - override hydra/hydra_logging: disabled
   - _self_
