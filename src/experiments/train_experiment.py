@@ -81,6 +81,7 @@ class NanoWMTrainingModule(LightningModule):
             diffusion_steps=args.experiment.diffusion.diffusion_steps,
             snr_gamma=args.experiment.diffusion.snr_gamma,
             zero_terminal_snr=args.experiment.diffusion.zero_terminal_snr,
+            use_ot_coupling=getattr(args.experiment.diffusion, "use_ot_coupling", True),
         )
         print(f"[Init] Loading VAE from: {args.vae_model_path}", flush=True)
         self.vae = AutoencoderKL.from_pretrained(args.vae_model_path, subfolder="vae")
